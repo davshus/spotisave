@@ -21,5 +21,12 @@
         <div id="sign-in-bottom" class="sign-in spotify-button">
         </div>
     </div>
+    <!--Inline JS because there isn't much -->
+    <script>
+        var a = document.querySelectorAll('.sign-in');
+        for (let i = 0; i < a.length; i++) {
+            a[i].addEventListener('click', function() {document.replace('');}); //TODO: Generate Spotify OAuth query
+        }
+    </script>
 </body>
 </html>
