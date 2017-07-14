@@ -9,6 +9,9 @@ var webserver = require('gulp-webserver');
 var buffer = require('vinyl-buffer');
 var merge = require('merge-stream');
 var uglifyify = require('uglifyify'); //What?
+var htmlmin = require('gulp-htmlmin');
+var cleanCSS = require('gulp-clean-css');
+
 const port = 8080;
 
 function server (livereload) {
@@ -22,16 +25,28 @@ function server (livereload) {
 }
 
 gulp.task('build', function() {
-  var script =
-      browserify({entries: 'src/index.js', extensions: ['.js'], debug: true})
-        .transform(babelify)
-        .transform(uglifyify)
-        .bundle()
-      .pipe(source('bundle.js'))
-      .pipe(gulp.dest('dist/'));
-  var others = gulp.src('src/**/!(*.js)')
+  var main =
+    browserify({entries: 'src/main.js', extensions: ['.js'], debug: true})
+      .transform(babelify)
+      .transform(uglifyify)
+      .bundle()
+    .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist/'));
-  return merge(script, others);
+  var html =
+    gulp.src('src/**/*.html')
+      .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest('dist/'));
+  var css =
+    gulp.src('src/**/*.css')
+      .pipe(cleanCSS({compatibility: '*'}))
+      .pipe(gulp.dest('dist/'));
+  var js =
+    gulp.src('src/**/(*.js|!main.js)')
+      .pipe(gulp.dest('dist/'));
+  var others =
+    gulp.src('src/**/!(*.js|*.html|*.css)')
+      .pipe(gulp.dest('dist/'));
+  return merge(main, html, css, js, others);
 });
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/**/*', ['build']);
