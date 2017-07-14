@@ -1,11 +1,13 @@
-html,body {
+  html,body {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  text-align: center;
 }
 body {
   background: linear-gradient(135deg, #FFBA08, #DC0073);
+  font-family: 'Lato', sans-serif;
 }
 #backdrop {
   background: linear-gradient(to bottom, rgba(0,0,0,1) 41%,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%);
@@ -29,7 +31,6 @@ body {
 .front-page-text {
   color: white;
   margin-top: 10%;
-  font-family: 'Lato', sans-serif;
   text-align: center;
   width: 100%;
   opacity: 0;
@@ -43,14 +44,63 @@ body {
   font-weight: 600;
   animation-delay: 1s;
 }
-#info-container {
+#info {
   font-size: 3em;
   font-weight: 500;
   animation-delay: 2s;
-}
-#info {
   width: 75%;
   margin-left: 12.5%;
+}
+.spotify-button {
+  color: white;
+  padding: 1em;
+  background: #1DB954; /*Spotify Green*/
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 500;
+  border-radius: 500px;
+  transition: padding 0.25s, background 0.25s;
+}
+.sign-in::before {
+  content: "Sign in with Spotify";
+}
+#sign-in-bottom-container {
+  animation-delay: 3s;
+  background: white;
+  height: 100%;
+  padding-top: 7em;
+}
+#sign-in-bottom {
+  /*animation-delay: 3s;*/
+  width: auto;
+  font-size: 2em;
+  padding: 1em;
+  margin-top: -2em;
+}
+.spotify-button:hover {
+  background: #5ec883;
+  padding: 1.125em !important;
+  cursor: pointer;
+}
+#sign-in-top-container {
+  /*padding-top: 0.5em;*/
+  width: 100%;
+  height: 4em;
+  background: white;
+  /*padding-right: 0.5em;*/
+  text-align: right;
+  position: fixed;
+  visibility: hidden;
+}
+#sign-in-top {
+  /*margin-right: 0.5em;*/
+  position: absolute;
+  right: 0.5em;
+  top: 0.25em;
+  /*bottom: 0.25em;*/
+}
+#sign-in-top:hover {
+  padding: 1em !important;
 }
 @keyframes slide_appear {
   from {
@@ -62,8 +112,19 @@ body {
     margin-top: 5%;
   }
 }
-@media screen and (max-width: 600px) {
-  #info-container {
-    font-size: 1em;
+@media screen and (max-width: 800px) {
+  #info {
+    font-size: 2em !important;
+  }
+  #title {
+    font-size: 5em;
+  }
+}
+@media screen and (max-height: 800px) {
+  #sign-in-bottom-container {
+    visibility: hidden;
+  }
+  #sign-in-top-container {
+    visibility: visible;
   }
 }
