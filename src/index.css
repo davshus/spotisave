@@ -1,4 +1,4 @@
-  html,body {
+html,body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -35,7 +35,7 @@ body {
   width: 100%;
   opacity: 0;
   animation-name: slide_appear;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -47,7 +47,7 @@ body {
 #info {
   font-size: 3em;
   font-weight: 500;
-  animation-delay: 2s;
+  animation-delay: 1s;
   width: 75%;
   margin-left: 12.5%;
 }
@@ -65,7 +65,7 @@ body {
   content: "Sign in with Spotify";
 }
 #sign-in-bottom-container {
-  animation-delay: 3s;
+  animation-delay: 1s;
   background: white;
   height: 100%;
   padding-top: 7em;
@@ -91,12 +91,14 @@ body {
   text-align: right;
   position: fixed;
   visibility: hidden;
+  bottom: 0;
+  animation-delay: 1s;
 }
 #sign-in-top {
   /*margin-right: 0.5em;*/
   position: absolute;
   right: 0.5em;
-  top: 0.25em;
+  bottom: 0.5em;
   /*bottom: 0.25em;*/
 }
 #sign-in-top:hover {
@@ -117,14 +119,20 @@ body {
     font-size: 2em !important;
   }
   #title {
-    font-size: 5em;
+    font-size: 5em !important;
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 900px) {
   #sign-in-bottom-container {
     visibility: hidden;
   }
   #sign-in-top-container {
     visibility: visible;
+  }
+  #info {
+    font-size: 2em !important;
+  }
+  #title {
+    font-size: 5em !important;
   }
 }
