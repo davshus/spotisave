@@ -23,9 +23,34 @@
     </div>
     <!--Inline JS because there isn't much -->
     <script>
+
         var a = document.querySelectorAll('.sign-in');
-        for (let i = 0; i < a.length; i++) {
-            a[i].addEventListener('click', function() {document.replace('');}); //TODO: Generate Spotify OAuth query
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('click', function() {
+                var possible = 'qwertyuiopasdfghjklzxcvbnm';
+                possible += possible.toUpperCase();
+                possible += '1234567890';
+                var randomString = function(len) {
+                    var ans = '';
+                    for (var i = 0; i < len; i++) {
+                        ans += possible[Math.floor(Math.random() * possible.length)];
+                    }
+                    return ans;
+                }
+                var scope = 'playlist-read-private playlist-modify-public playlist-modify-private';
+                var clientId = "ef48e8f5d5b5424cb55c8559a27e0bcc";
+                var query = '?client_id=' + clientId + '&response_type=token&redirect_uri=' + document.location.protocol + '//' + document.location.host + '/app.html&scope=' + encodeURI(scope);
+                if (typeof(Storage) !== "undefined") {
+                  if (window.sessionStorage.spotisaveState) {
+                    console.log("Rewriting Spotisave State...");
+                  }
+                  window.sessionStorage.spotisaveState = randomString(32);
+                  query += '&state=' + window.sessionStorage.spotisaveState;
+                } else {
+                  console.warn("HTML Storage is not supported in this browser.")
+                }
+                document.location.href = 'https://accounts.spotify.com/authorize' + query;
+            });
         }
     </script>
 </body>
