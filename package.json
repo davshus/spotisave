@@ -10,6 +10,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "babel-core": "^6.25.0",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
@@ -22,5 +23,8 @@
     "uglifyify": "^4.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
