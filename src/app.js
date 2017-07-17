@@ -8,7 +8,7 @@ var auth = hash.obj;
 var api = apigen(auth.access_token);
 
 async function test() {
-  var info = await api.myInfo();
+  var info = await api.myPlaylists();
   console.log(info);
 }
 
