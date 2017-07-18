@@ -30,6 +30,7 @@ gulp.task('build', function() {
       .transform(babelify)
       .transform(uglifyify)
       .bundle()
+    .on('error', onError)
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist/'));
   var html =
@@ -51,6 +52,11 @@ gulp.task('build', function() {
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/**/*', ['build']);
 });
+
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
 
 gulp.task('serve', server(false));
 gulp.task('live', server(true));
