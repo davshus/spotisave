@@ -7,7 +7,6 @@ module.exports = token => {
     tmp.endpoint = !tmp.overrideAutoEndpoint && tmp.endpoint[0] == '/' ? tmp.endpoint.substring(1) : tmp.endpoint;
     tmp.token = tmp.token || obj._token;
     tmp.data = typeof opt.body == 'object' ? JSON.stringify(opt.body) : opt.body;
-    console.log(tmp);
     if (!tmp.method)
       reject('Missing ajax method.');
     $.ajax({
@@ -29,7 +28,7 @@ module.exports = token => {
     method: 'GET'
   });
   obj.myPlaylists = () => obj.req({
-    endpoint: '/me/playlists',
+    endpoint: '/me/playlists?limit=50',
     method: 'GET'
   });
   obj.playlistTracks = href => obj.req({
@@ -43,6 +42,15 @@ module.exports = token => {
     contentType: 'application/json',
     body: {
       name: name
+    }
+  });
+  obj.addTracksToPlaylist = (href, uris) => obj.req({
+    endpoint: href + (href.charAt(href.length - 1) == '/' ? '' : '/') + 'tracks',
+    overrideAutoEndpoint: true,
+    method: 'POST',
+    contentType: 'application/json',
+    body: {
+      uris: uris
     }
   });
   return obj;
