@@ -33,6 +33,14 @@ function generateDWName() {
   return playlistName;
 }
 async function exportDW() {
+  //Check for security state
+  if (Storage) {
+    if (sessionStorage.spotisaveState != auth.state) {
+      return "Our access to your spotify account may have been tampered with.  Aborting due to security concerns. Please try again from the home page.";
+    }
+  } else {
+    console.warn("Storage is not supported in this browser.  Accepting the token as in insecure mode.")
+  }
   status.start();
   status.setStatus('Making an awesome playlist...');
   try {
