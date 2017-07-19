@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Spotisave | Home</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="index.css" />
-</head>
-<body>
-    <div id="backdrop"></div>
-    <div id="sign-in-top-container" class="front-page-text">
-        <div id="sign-in-top" class="sign-in spotify-button">
-
-        </div>
-    </div>
-    <div id="title" class="front-page-text">Spotisave</div>
-    <div id="info" class="front-page-text">
-        Sometimes, Spotify finds that one perfect playlist that just fits you as a person.<br />
-        And then it's gone the next week. Every single week.<br />
-        Sign in to back up and export your playlist! Keep it forever!
-    </div>
-    <div id="sign-in-bottom-container" class="front-page-text">
-        <div id="sign-in-bottom" class="sign-in spotify-button">
-        </div>
-    </div>
-    <!--Inline JS because there isn't much -->
-    <script>
-
-        var a = document.querySelectorAll('.sign-in');
+<!DOCTYPE html><html><head><title>Spotisave | Home</title><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="index.css"></head><body><div id="backdrop"></div><div id="sign-in-top-container" class="front-page-text"><div id="sign-in-top" class="sign-in spotify-button"></div></div><div id="title" class="front-page-text">Spotisave</div><div id="info" class="front-page-text">Sometimes, Spotify finds that one perfect playlist that just fits you as a person.<br>And then it's gone the next week. Every single week.<br>Sign in to back up and export your playlist! Keep it forever!</div><div id="sign-in-bottom-container" class="front-page-text"><div id="sign-in-bottom" class="sign-in spotify-button"></div></div><!--Inline JS because there isn't much --><script>var a = document.querySelectorAll('.sign-in');
         for (var i = 0; i < a.length; i++) {
             a[i].addEventListener('click', function() {
                 var possible = 'qwertyuiopasdfghjklzxcvbnm';
@@ -52,7 +25,4 @@
                 }
                 document.location.href = 'https://accounts.spotify.com/authorize' + query;
             });
-        }
-    </script>
-</body>
-</html>
+        }</script></body></html>
