@@ -1,0 +1,136 @@
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  background: linear-gradient(135deg, #FFBA08, #DC0073);
+  font-family: 'Lato', sans-serif;
+}
+#title {
+  top: 1rem;
+  position: absolute;
+  color: white;
+  font-size: 10em;
+  font-weight: 600;
+}
+#main {
+  position: absolute;
+  height: 30em;
+  width: 45em;
+  /*top: 50vh;*/
+  /*left: 50vw;*/
+  /*margin-top: -15em;*/
+  /*margin-left: -22.5em;*/
+  background: rgba(255, 255, 255, 0.5);
+  border: solid 1px white;
+  color: white;
+  border-radius: 2em;
+  animation-name: open;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.25s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading {
+  background: white;
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 100%;
+  display: inline-block;
+  margin-left: 0.25px;
+  margin-right: 0.25px;
+  animation-name: load;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transform: scale(0.5);
+}
+.loading[dot="1"] {
+  animation-delay: 0s;
+}
+.loading[dot="2"] {
+  animation-delay: 0.25s;
+}
+.loading[dot="3"] {
+  animation-delay: 0.5s;
+}
+#done-container {
+  height: 3em;
+  width: 3em;
+  margin: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.done {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.draw {
+  animation-name: draw;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.39, 0.01, 0.04, 0.85);
+  stroke-dashoffset: 1000;
+  stroke-dasharray: 1000;
+  stroke-opacity: 1 !important;
+}
+#indicator {
+  font-size: 3em;
+}
+@keyframes load {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+@keyframes open {
+  0% {
+    visibility: visible;
+    height: 1em;
+    width: 0px;
+    /*margin-top: -0.5em;*/
+    /*margin-left: 0px;*/
+  }
+  50% {
+    /*margin-top: -0.5em;*/
+    height: 1em;
+    /*margin-left: -22.5em;*/
+    width: 45em;
+  }
+  100% {
+    visibility: visible;
+    /*margin-top: -15em;*/
+    height: 30em;
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media screen and (max-height: 900px) {
+  #title {
+    visibility: hidden;
+  }
+}
