@@ -1,5 +1,3 @@
-// PLEASE DON'T ADD PERIODS TO THE STATUS
-// PLEASE
 module.exports = (function() {
   var obj = new Object();
   obj._status = "Loading";

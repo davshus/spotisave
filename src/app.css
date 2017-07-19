@@ -23,10 +23,6 @@ body {
   position: absolute;
   height: 30em;
   width: 45em;
-  /*top: 50vh;*/
-  /*left: 50vw;*/
-  /*margin-top: -15em;*/
-  /*margin-left: -22.5em;*/
   background: rgba(255, 255, 255, 0.5);
   border: solid 1px white;
   color: white;
@@ -110,18 +106,13 @@ body {
     visibility: visible;
     height: 1em;
     width: 0px;
-    /*margin-top: -0.5em;*/
-    /*margin-left: 0px;*/
   }
   50% {
-    /*margin-top: -0.5em;*/
     height: 1em;
-    /*margin-left: -22.5em;*/
     width: 45em;
   }
   100% {
     visibility: visible;
-    /*margin-top: -15em;*/
     height: 30em;
   }
 }

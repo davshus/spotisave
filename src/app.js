@@ -4,7 +4,6 @@ var status = require('./status');
 var $ = require('jquery');
 var auth = hash.obj;
 
-// TODO: ADD STATE CHECKING
 function error(msg) {
   status.stop();
   console.error(msg);
