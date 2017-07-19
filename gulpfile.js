@@ -11,6 +11,7 @@ var merge = require('merge-stream');
 var uglifyify = require('uglifyify'); //What?
 var htmlmin = require('gulp-htmlmin');
 var cleanCSS = require('gulp-clean-css');
+var deploy = require('gulp-gh-pages');
 
 const port = 8080;
 
@@ -61,4 +62,9 @@ function onError(err) {
 gulp.task('serve', server(false));
 gulp.task('live', server(true));
 
-gulp.task('default', ['live', 'watch'])
+gulp.task('deploy', function() {
+  return gulp.src('dist/**/*')
+    .pipe(deploy());
+});
+
+gulp.task('default', ['live', 'watch']);
