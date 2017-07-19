@@ -13,7 +13,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 #title {
-  top: 1rem;
+  top: 0.25rem;
   position: absolute;
   color: white;
   font-size: 10em;
