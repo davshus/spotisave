@@ -1,4 +1,10 @@
-<!DOCTYPE html><html><head><title>Spotisave | Home</title><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="index.css"></head><body><div id="backdrop"></div><div id="sign-in-top-container" class="front-page-text"><div id="sign-in-top" class="sign-in spotify-button"></div></div><div id="title" class="front-page-text">Spotisave</div><div id="info" class="front-page-text">Sometimes, Spotify finds that one perfect playlist that just fits you as a person.<br>And then it's gone the next week. Every single week.<br>Sign in to back up and export your playlist! Keep it forever!</div><div id="sign-in-bottom-container" class="front-page-text"><div id="sign-in-bottom" class="sign-in spotify-button"></div></div><!--Inline JS because there isn't much --><script>var a = document.querySelectorAll('.sign-in');
+<!DOCTYPE html><html><head><title>Spotisave | Home</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102966375-1', 'auto');
+  ga('send', 'pageview');</script><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="index.css"></head><body><div id="backdrop"></div><div id="sign-in-top-container" class="front-page-text"><div id="sign-in-top" class="sign-in spotify-button"></div></div><div id="title" class="front-page-text">Spotisave</div><div id="info" class="front-page-text">Sometimes, Spotify finds that one perfect playlist that just fits you as a person.<br>And then it's gone the next week. Every single week.<br>Sign in to back up and export your playlist! Keep it forever!</div><div id="sign-in-bottom-container" class="front-page-text"><div id="sign-in-bottom" class="sign-in spotify-button"></div></div><!--Inline JS because there isn't much --><script>var a = document.querySelectorAll('.sign-in');
         for (var i = 0; i < a.length; i++) {
             a[i].addEventListener('click', function() {
                 var possible = 'qwertyuiopasdfghjklzxcvbnm';
@@ -27,10 +33,4 @@
                 }
                 document.location.href = 'https://accounts.spotify.com/authorize' + query;
             });
-        }</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-102966375-1', 'auto');
-  ga('send', 'pageview');</script></body></html>
+        }</script></body></html>
