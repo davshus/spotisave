@@ -67,4 +67,6 @@ gulp.task('deploy', function() {
     .pipe(deploy());
 });
 
+gulp.task('pray', ['build', 'deploy']); //I too, like to live life on the edge.
+
 gulp.task('default', ['live', 'watch']);
