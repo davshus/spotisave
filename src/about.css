@@ -65,3 +65,17 @@ body {
   color: white;
   /*text-decoration: none;*/
 }
+#footer {
+  color: white;
+  bottom: 0.5em;
+  right: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  z-index: 2;
+  font-size: 1.25em;
+}
+#footer a {
+  color: white;
+}

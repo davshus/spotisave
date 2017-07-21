@@ -109,6 +109,16 @@ body {
     margin-top: 5%;
   }
 }
+@keyframes footer_slide_appear {
+  from {
+    opacity: 0;
+    bottom: -1em;
+  }
+  to {
+    opacity: 1;
+    bottom: 0.5em;
+  }
+}
 @media screen and (max-width: 800px) {
   #info {
     font-size: 2em !important;
@@ -130,4 +140,23 @@ body {
   #title {
     font-size: 5em !important;
   }
+}
+#footer {
+  /*border: 1px solid black;*/
+  /*border-radius: 5px;*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1em;
+  display: inline-block;
+  opacity: 0;
+  animation-name: footer_slide_appear;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-delay: 2.25s;
+  z-index: 2;
+  font-size: 1.25em;
+}
+#footer a {
+  color: black;
 }

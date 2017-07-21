@@ -126,3 +126,15 @@ body {
     visibility: hidden;
   }
 }
+#footer {
+  text-align: center;
+  left: 0;
+  bottom: 0.5em;
+  right: 0;
+  color: white;
+  position: absolute;
+  font-size: 1.25em;
+}
+#footer a {
+  color: white;
+}
