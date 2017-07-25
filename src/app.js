@@ -57,7 +57,7 @@ async function exportDW() {
   }
   var dw = playlists.items.filter(i=>i.owner.id == "spotify" && i.name == "Discover Weekly");
   if (dw.length < 1) {
-    console.error(e);
+    console.error("Error: Could not find Discover Weekly");
     return "No Discover Weekly was found. Try unfollowing it, then following it.";
   }
   dw = dw[0];
